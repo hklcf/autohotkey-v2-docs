@@ -1,0 +1,50 @@
+# EditGetCurrentCol
+
+Returns the column number in an edit control where the caret resides.
+
+```ahk
+CurrentCol := EditGetCurrentCol(ControlID , WinTitle, WinText, ExcludeTitle, ExcludeText)
+```
+
+<a id="Parameters"></a>
+## Parameters
+
+**ControlID**
+
+Type: [String](../Concepts.md#strings), [Integer](../Concepts.md#numbers) or [Object](../Concepts.md#objects)
+
+The control's ClassNN, text or HWND, or an object with a Hwnd property. For details, see [Control Identifiers](../misc/ControlID.md).
+
+**WinTitle, WinText, ExcludeTitle, ExcludeText**
+
+Type: [String](../Concepts.md#strings), [Integer](../Concepts.md#numbers) or [Object](../Concepts.md#objects)
+
+If each of these is blank or omitted, the [Last Found Window](../misc/WinTitle.md#LastFoundWindow) will be used. Otherwise, specify for *WinTitle* a [window title or other criteria](../misc/WinTitle.md) to identify the target window and/or for *WinText* a substring from a single text element of the target window (as revealed by the included [Window Spy](../Program.md#Window_Spy) utility).
+
+*ExcludeTitle* and *ExcludeText* can be used to exclude one or more windows by their title or text. Their specification is similar to *WinTitle* and *WinText*, except that *ExcludeTitle* does not recognize any criteria other than the window title.
+
+Window titles and text are case-sensitive. By default, hidden windows are not detected and hidden text elements are detected, unless changed with [DetectHiddenWindows](DetectHiddenWindows.md) and [DetectHiddenText](DetectHiddenText.md). When using [pure HWNDs](../misc/WinTitle.md#ahk_id), hidden windows are always detected. By default, a window title can contain *WinTitle* or *ExcludeTitle* anywhere inside it to be a match, unless changed with [SetTitleMatchMode](SetTitleMatchMode.md).
+
+<a id="Return_Value"></a>
+## Return Value
+
+Type: [Integer](../Concepts.md#numbers)
+
+This function returns the column number where the caret resides (the first column is 1, the second is 2, and so on).
+
+If there is text selected in the control, the return value is the column number where the selection begins.
+
+<a id="Error_Handling"></a>
+## Error Handling
+
+An exception is thrown on failure, or if the window or control could not be found.
+
+<a id="Remarks"></a>
+## Remarks
+
+This function works best with common or predefined Microsoft controls; some applications use custom or modified controls, in which case the function might not work as expected.
+
+<a id="Related"></a>
+## Related
+
+[EditGetCurrentLine](EditGetCurrentLine.md), [EditGetLineCount](EditGetLineCount.md), [EditGetLine](EditGetLine.md), [EditGetSelectedText](EditGetSelectedText.md), [EditPaste](EditPaste.md), [Control functions](Control.md)
