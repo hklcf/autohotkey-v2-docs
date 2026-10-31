@@ -1,0 +1,29 @@
+{
+  "name": "autohotkey-v2-docs",
+  "version": "1.0.0",
+  "description": "Offline Markdown mirror of the official AutoHotkey v2 documentation, packaged as an OpenCode skill.",
+  "license": "GPL-2.0-only",
+  "type": "module",
+  "private": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "update": "node scripts/update.mjs",
+    "update:check": "node scripts/update.mjs --check",
+    "update:offline": "node scripts/update.mjs --offline",
+    "verify": "node scripts/update.mjs --check --strict",
+    "verify:offline": "node scripts/update.mjs --offline --check --strict"
+  },
+  "keywords": [
+    "autohotkey",
+    "ahk",
+    "ahk-v2",
+    "documentation",
+    "opencode-skill",
+    "markdown"
+  ],
+  "dependencies": {
+    "node-html-parser": "^7.1.0"
+  }
+}
