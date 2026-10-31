@@ -1,0 +1,11 @@
+# Keep the working tree byte-identical to what scripts/update.mjs writes (LF),
+# so `npm run update -- --check` does not report every page as changed on
+# Windows checkouts.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.gif binary
+# Upstream example scripts are copied byte-for-byte; some use CRLF.
+*.ahk -text
+*.reg -text
