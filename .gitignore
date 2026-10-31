@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Raw HTML cache (recreated by `npm run update`)
+.cache/
+
+# Temporary / debug scripts
+scripts/tmp-*
+
+# OS / editor noise
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+*.log
