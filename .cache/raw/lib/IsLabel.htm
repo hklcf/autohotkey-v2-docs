@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>IsLabel - Syntax &amp; Usage | AutoHotkey v2</title>
+<meta name="description" content="The IsLabel function returns a non-zero number if the specified label exists in the current scope." />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" />
+<link href="../static/dark.css" rel="stylesheet" media="(prefers-color-scheme: dark)" id="dark_css" />
+<script src="../static/content.js" id="content_js"></script>
+</head>
+<body><script>site.init();</script>
+
+<h1>IsLabel</h1>
+
+<p>Returns a non-zero number if the specified label exists in the current scope.</p>
+
+<pre class="Syntax">Boolean := <span class="func">IsLabel</span>(LabelName)</pre>
+<h2 id="Parameters">Parameters</h2>
+<dl>
+
+  <dt>LabelName</dt>
+  <dd>
+    <p>Type: <a href="../Concepts.htm#strings">String</a></p>
+    <p>The name of a <a href="../misc/Labels.htm">label</a>. The trailing colon should not be included.</p>
+  </dd>
+
+</dl>
+
+<h2 id="Return_Value">Return Value</h2>
+<p>Type: <a href="../Concepts.htm#boolean">Integer (boolean)</a></p>
+<p>This function returns 1 (true) if the specified label exists within the current scope, otherwise 0 (false).</p>
+
+<h2 id="Remarks">Remarks</h2>
+<p>This function is useful to avoid runtime errors when specifying a dynamic label for <a href="Goto.htm">Goto</a>.</p>
+<p>When called from inside a function, only that function's labels are searched. Global labels are not valid targets for a local goto.</p>
+
+<h2 id="Related">Related</h2>
+<p><a href="../misc/Labels.htm">Labels</a></p>
+<h2 id="Examples">Examples</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Reports "Target label exists" because the label does exist.</p>
+<pre>if IsLabel("Label")
+    MsgBox "Target label exists"
+else
+    MsgBox "Target label doesn't exist"
+
+Label:
+return</pre>
+</div>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a53609f7ba2486e9',t:'MTc5MzQ4NTE0MQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a53609f7ba2486e9',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

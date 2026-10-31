@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>ObjBindMethod - Syntax &amp; Usage | AutoHotkey v2</title>
+<meta name="description" content="The ObjBindMethod function creates a BoundFunc object which calls a method of a given object." />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" />
+<link href="../static/dark.css" rel="stylesheet" media="(prefers-color-scheme: dark)" id="dark_css" />
+<script src="../static/content.js" id="content_js"></script>
+</head>
+<body><script>site.init();</script>
+
+<h1>ObjBindMethod</h1>
+
+<p>Creates a <a href="../misc/Functor.htm#BoundFunc">BoundFunc object</a> which calls a method of a given object.</p>
+
+<pre class="Syntax">BoundFunc := <span class="func">ObjBindMethod</span>(Obj <span class="optional">, Method, <i>Params</i></span>)</pre>
+
+<h2 id="Parameters">Parameters</h2>
+<dl>
+
+  <dt>Obj</dt>
+  <dd>
+    <p>Type: <a href="../Concepts.htm#objects">Object</a></p>
+    <p>Any object.</p>
+  </dd>
+
+  <dt>Method</dt>
+  <dd>
+    <p>Type: <a href="../Concepts.htm#strings">String</a></p>
+    <p>A method name. If omitted, the bound function calls <em>Obj</em> itself.</p>
+  </dd>
+  
+  <dt><i>Params</i></dt>
+  <dd>
+    <p>Any number of parameters.</p>
+  </dd>
+
+</dl>
+
+<h2 id="Remarks">Remarks</h2>
+<p>For details and examples, see <a href="../misc/Functor.htm#BoundFunc">BoundFunc object</a>.</p>
+
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5360a17b9f6d97f',t:'MTc5MzQ4NTE0Ng=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5360a17b9f6d97f',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

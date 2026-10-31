@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>SetCapsLockState / SetNumLockState / SetScrollLockState - Syntax &amp; Usage | AutoHotkey v2</title>
+<meta name="description" content="The SetCapsLockState, SetNumLockState and SetScrollLockState functions set the state of the CapsLock, NumLock, and ScrollLock keys. Can also force the keys to stay on or off." />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" />
+<link href="../static/dark.css" rel="stylesheet" media="(prefers-color-scheme: dark)" id="dark_css" />
+<script src="../static/content.js" id="content_js"></script>
+</head>
+<body><script>site.init();</script>
+
+<h1>SetCapsLockState / SetNumLockState / SetScrollLockState</h1>
+
+<p>Sets the state of the CapsLock, NumLock, or ScrollLock key. Can also force the key to stay on or off.</p>
+
+<pre class="Syntax"><span class="func">SetCapsLockState</span> <span class="optional">State</span>
+<span class="func">SetNumLockState</span> <span class="optional">State</span>
+<span class="func">SetScrollLockState</span> <span class="optional">State</span></pre>
+<h2 id="Parameters">Parameters</h2>
+<dl>
+
+  <dt>State</dt>
+  <dd>
+    <p>Type: <a href="../Concepts.htm#strings">String</a> or <a href="../Concepts.htm#numbers">Integer</a></p>
+    <p>If blank or omitted, the AlwaysOn/Off attribute of the key is removed (if present). Otherwise, specify one of the following values:</p>
+    <p><strong>On</strong> or 1 (<a href="../Variables.htm#True">true</a>): Turns on the key and removes the AlwaysOn/Off attribute of the key (if present).</p>
+	  <p><strong>Off</strong> or 0 (<a href="../Variables.htm#False">false</a>): Turns off the key and removes the AlwaysOn/Off attribute of the key (if present).</p>
+    <p><strong>AlwaysOn:</strong> Forces the key to stay on permanently.</p>
+    <p><strong>AlwaysOff:</strong> Forces the key to stay off permanently.</p>
+  </dd>
+
+</dl>
+
+<h2 id="Remarks">Remarks</h2>
+<p>Alternatively to <a href="#ExToggle">example #3</a> below, a key can also be toggled to its opposite state via the <a href="Send.htm">Send</a> function, e.g. <code>Send "{CapsLock}"</code>. However, sending {CapsLock} might require <code><a href="SetStoreCapsLockMode.htm">SetStoreCapsLockMode</a> False</code> beforehand.</p>
+<p>Keeping a key <em>AlwaysOn</em> or <em>AlwaysOff</em> requires the <a href="InstallKeybdHook.htm">keyboard hook</a>, which will be automatically installed in such cases.</p>
+<h2 id="Related">Related</h2>
+<p><a href="SetStoreCapsLockMode.htm">SetStoreCapsLockMode</a>, <a href="GetKeyState.htm">GetKeyState</a></p>
+<h2 id="Examples">Examples</h2>
+
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Turns on the NumLock key and removes the AlwaysOn/Off attribute of the key (if present).</p>
+<pre>SetNumLockState True</pre>
+</div>
+
+<div class="ex" id="ExAlwaysOff">
+<p><a class="ex_number" href="#ExAlwaysOff"></a> Forces the ScrollLock key to stay off permanently.</p>
+<pre>SetScrollLockState "AlwaysOff"</pre>
+</div>
+
+<div class="ex" id="ExToggle">
+<p><a class="ex_number" href="#ExToggle"></a> Toggles the CapsLock key to its opposite state.</p>
+<pre>SetCapsLockState !GetKeyState("CapsLock", "T")</pre>
+</div>
+
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a53609f549b655bb',t:'MTc5MzQ4NTE0MQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a53609f549b655bb',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

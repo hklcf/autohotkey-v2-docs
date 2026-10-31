@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>ComObjGet - Syntax &amp; Usage | AutoHotkey v2</title>
+<meta name="description" content="The ComObjGet function returns a reference to an object provided by a COM component." />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" />
+<link href="../static/dark.css" rel="stylesheet" media="(prefers-color-scheme: dark)" id="dark_css" />
+<script src="../static/content.js" id="content_js"></script>
+</head>
+<body><script>site.init();</script>
+
+<h1>ComObjGet</h1>
+<p>Returns a reference to an object provided by a COM component.</p>
+<pre class="Syntax">ComObj := <span class="func">ComObjGet</span>(Name)</pre>
+
+<h2 id="Parameters">Parameters</h2>
+<dl>
+
+  <dt>Name</dt>
+  <dd>
+    <p>Type: <a href="../Concepts.htm#strings">String</a></p>
+    <p>The display name of the object to be retrieved. See <a href="https://learn.microsoft.com/windows/win32/api/objbase/nf-objbase-mkparsedisplayname">MkParseDisplayName (Microsoft Docs)</a> for more information.</p>
+  </dd>
+
+</dl>
+
+<h2 id="Return_Value">Return Value</h2>
+<p>Type: <a href="ComObject.htm">ComObject</a></p>
+<p>This function returns a new COM wrapper object with the <a href="ComObjType.htm#vt">variant type</a> VT_DISPATCH (9).</p>
+
+<h2 id="Error_Handling">Error Handling</h2>
+<p>An exception is thrown on failure.</p>
+
+<h2 id="Related">Related</h2>
+<a href="ComObject.htm">ComObject</a>, <a href="ComObjActive.htm">ComObjActive</a>, <a href="ComObjConnect.htm">ComObjConnect</a>, <a href="ComObjQuery.htm">ComObjQuery</a>, <a href="https://learn.microsoft.com/windows/win32/api/objbase/nf-objbase-cogetobject">CoGetObject (Microsoft Docs)</a>
+
+<h2 id="Examples">Examples</h2>
+<div class="ex" id="exwmi">
+<p><a class="ex_number" href="#exwmi"></a> Press <kbd>Shift</kbd>+<kbd>Esc</kbd> to show the command line which was used to launch the active window's process. For Win32_Process, see <a href="https://learn.microsoft.com/windows/win32/cimwin32prov/win32-process">Microsoft Docs</a>.</p>
+<pre>+Esc::
+{
+    pid := WinGetPID("A")
+    <em>; Get WMI service object.</em>
+    wmi := ComObjGet("winmgmts:")
+    <em>; Run query to retrieve matching process(es).</em>
+    queryEnum := wmi.ExecQuery(""
+        . "Select * from Win32_Process where ProcessId=" . pid)
+        ._NewEnum()
+    <em>; Get first matching process.</em>
+    if queryEnum(&amp;proc)
+        MsgBox(proc.CommandLine, "Command line", 0)
+    else
+        MsgBox("Process not found!")
+}</pre>
+</div>
+
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a53609deea34eab2',t:'MTc5MzQ4NTEzNw=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a53609deea34eab2',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

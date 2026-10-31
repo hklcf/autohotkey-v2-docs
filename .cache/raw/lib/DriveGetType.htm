@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>DriveGetType - Syntax &amp; Usage | AutoHotkey v2</title>
+<meta name="description" content="The DriveGetType function returns the type of the drive which contains the specified path." />
+<meta name="ahk:equiv-v1" content="lib/DriveGet.htm#Type" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" />
+<link href="../static/dark.css" rel="stylesheet" media="(prefers-color-scheme: dark)" id="dark_css" />
+<script src="../static/content.js" id="content_js"></script>
+</head>
+<body><script>site.init();</script>
+
+<h1>DriveGetType</h1>
+
+<p>Returns the type of the drive which contains the specified path.</p>
+
+<pre class="Syntax">DriveType := <span class="func">DriveGetType</span>(Path)</pre>
+
+<h2 id="Parameters">Parameters</h2>
+<dl>
+    <dt>Path</dt>
+    <dd>
+        <p>Type: <a href="../Concepts.htm#strings">String</a></p>
+        <p>Any path contained by the drive (might also work on UNC paths and mapped drives).</p>
+    </dd>
+</dl>
+
+<h2 id="Return_Value">Return Value</h2>
+<p>Type: <a href="../Concepts.htm#strings">String</a></p>
+<p>This function returns the type of the drive which contains <em>Path</em>: Unknown, Removable, Fixed, Network, CDROM, or RAMDisk. If <em>Path</em> is invalid (e.g. because the drive does not exist), the return value is an empty string.</p>
+
+<h2 id="Remarks">Remarks</h2>
+<p>In general, <em>Path</em> can be any path. Since NTFS supports mounted volumes and directory junctions, different paths with the same drive letter can produce different results.</p>
+
+<h2 id="Related">Related</h2>
+<p><a href="Drive.htm">Drive functions</a></p>
+
+<h2 id="Examples">Examples</h2>
+<p>See <a href="Drive.htm#ExAnalyzeDrive">example #1</a> on the <a href="Drive.htm">Drive Functions</a> page for a demonstration of this function.</p>
+
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a53609d21944eab2',t:'MTc5MzQ4NTEzNQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a53609d21944eab2',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
