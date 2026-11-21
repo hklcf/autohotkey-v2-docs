@@ -1,6 +1,6 @@
 ![AutoHotkey](static/ahk_logo.svg)
 
-# Version [2.0.31](ChangeLog.md)
+# Version [2.0.32](ChangeLog.md)
 
 [https://www.autohotkey.com](https://www.autohotkey.com)
 

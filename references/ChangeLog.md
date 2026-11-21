@@ -4,6 +4,25 @@
 
 For full technical details of changes, refer to [GitHub](https://github.com/AutoHotkey/AutoHotkey).
 
+<a id="v2.0.32"></a>
+## 2.0.32 - November 21, 2026
+
+Fixed Hotkey On/Off/Toggle not working for AltTab hotkeys [broken by v2.0.13].
+
+Fixed undefined behavior when Format is called with specific malformed placeholders. [PR #366]
+
+Fixed crashes when matching RegEx with invalid UTF-16 at the start or end of a string or pattern.
+
+Fixed freeze when debugger client disconnects without sending `detach`/`stop`. [PR #368]
+
+Fixed debugger command `source` to stop at end of file when `-e` is omitted. [PR #368]
+
+Fixed debugger corrupting large values returned by `property_value`.
+
+Fixed hotstring S option causing the next character to be ignored (e.g. `:S*:a::b` ignored `*`).
+
+Fixed hotstrings and #Hotstring ignoring invalid options.
+
 <a id="v2.0.31"></a>
 ## 2.0.31 - October 25, 2026
 

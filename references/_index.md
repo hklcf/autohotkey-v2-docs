@@ -1,6 +1,6 @@
 # AutoHotkey v2 Documentation — Index
 
-Offline Markdown mirror of the official English documentation: **AutoHotkey 2.0.31** · 410 pages · snapshot 2026-10-31.
+Offline Markdown mirror of the official English documentation: **AutoHotkey 2.0.32** · 410 pages · snapshot 2026-11-21.
 
 Upstream: <https://www.autohotkey.com/docs/v2/>
 

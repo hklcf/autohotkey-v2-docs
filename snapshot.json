@@ -3,9 +3,9 @@
   "upstream": {
     "baseUrl": "https://www.autohotkey.com/docs/v2/",
     "product": "AutoHotkey v2",
-    "version": "2.0.31",
+    "version": "2.0.32",
     "tocSha256": "c67a415c16e8097f72a2f6759cc0e090656e186823d24d15ecfc52e565f16c2a",
-    "fetchedAt": "2026-10-31T19:49:13.580Z"
+    "fetchedAt": "2026-11-21T11:03:46.848Z"
   },
   "counts": {
     "pages": 410,
@@ -15,7 +15,7 @@
   "files": {
     "index.md": {
       "source": "index.htm",
-      "sha256": "54b0e0beaaaef65f3e7d614457a164a3ce7da43fec19c64fdd52c043cc60ca3f"
+      "sha256": "d0810b92e85d8b9524903c189e4583665031b378b3bff66a9e2ac9fd01db61c8"
     },
     "Program.md": {
       "source": "Program.htm",
@@ -115,7 +115,7 @@
     },
     "ChangeLog.md": {
       "source": "ChangeLog.htm",
-      "sha256": "a2f58710e1746151a4d908584f816adbc97dcc4aeae6fb337c84a5156571c561"
+      "sha256": "21a3c475944d37cfeb5a79985d54738b68d6592eea3f81b754b1224866d83cbb"
     },
     "v2-changes.md": {
       "source": "v2-changes.htm",
